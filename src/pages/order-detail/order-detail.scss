@@ -1,0 +1,22 @@
+page-order-detail {
+
+    .item-product {
+        height: 80px;
+    }
+
+    .image-product {
+        width: 70px !important;
+        height: 70px !important;
+        object-fit: contain;
+    }
+
+    .title-product {
+        color: color($colors, theme);
+        //font-weight: bold;
+        font-size: 16px;
+    }
+
+    //p {
+    //    color: color($colors, theme);
+    //}
+}

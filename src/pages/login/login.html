@@ -1,0 +1,62 @@
+<!--
+  Generated template for the LoginPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+  <ion-navbar>
+    <ion-title>Welcome</ion-title>
+  </ion-navbar>
+
+  <!-- (ionChange)="segmentChanged($event)" -->
+  <ion-segment color="theme" [(ngModel)]="mode">
+    <ion-segment-button class="button-segment" value="login"> Login </ion-segment-button>
+    <ion-segment-button class="button-segment" value="signup"> Sign Up </ion-segment-button>
+  </ion-segment>
+</ion-header>
+
+<ion-content>
+  <div [ngSwitch]="mode">
+    <ion-list *ngSwitchCase="'login'">
+      <ion-item no-lines class="item-input">
+        <ion-label stacked>Email</ion-label>
+        <ion-input type="text" [(ngModel)]="loginEmail"></ion-input>
+      </ion-item>
+      <ion-item no-lines class="item-input">
+        <ion-label stacked>Password</ion-label>
+        <ion-input type="password" [(ngModel)]="loginPassword"></ion-input>
+      </ion-item>
+      <ion-buttons class="buttons-custom">
+        <button class="button-custom" ion-button color="theme" block (click)="loginTapped()">Login</button>
+        <button ion-button clear color="theme" block (click)="forgotPasswordTapped()">Forgot Password</button>
+      </ion-buttons>
+    </ion-list>
+    <!-- <form novalidate name="SignupForm"> -->
+    <ion-list *ngSwitchCase="'signup'">
+      <ion-item no-lines class="item-input">
+        <ion-label stacked>First Name</ion-label>
+        <ion-input type="text" [(ngModel)]="signupFirstname"></ion-input>
+      </ion-item>
+      <ion-item no-lines class="item-input">
+        <ion-label stacked>Last Name</ion-label>
+        <ion-input type="text" [(ngModel)]="signupLastname"></ion-input>
+      </ion-item>
+      <ion-item no-lines class="item-input">
+        <ion-label stacked>Email</ion-label>
+        <ion-input type="email" [(ngModel)]="signupEmail"></ion-input>
+      </ion-item>
+      <ion-item no-lines class="item-input">
+        <ion-label stacked>Password (Use digits, lowercase and uppercase in your password)</ion-label>
+        <ion-input type="password" placeholder="minimum 8 characters" [(ngModel)]="signupPassword"></ion-input>
+      </ion-item>
+      <ion-item no-lines class="item-input">
+        <ion-label stacked>Password again</ion-label>
+        <ion-input type="password" [(ngModel)]="signupConfirmPassword"></ion-input>
+      </ion-item>
+      <ion-buttons class="buttons-custom">
+        <button class="button-custom" ion-button color="theme" block (click)="signupTapped()">Signup</button>
+      </ion-buttons>
+    </ion-list>
+  </div>
+</ion-content>

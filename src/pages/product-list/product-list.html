@@ -1,0 +1,105 @@
+<!--
+  Generated template for the ProductListPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+  <ion-navbar>
+    <button ion-button class="button-search" color="dark" clear (click)="searchTapped()"> 
+      <ion-icon class="icon-search" color="theme" name="icon-app-search"></ion-icon>
+      {{searchKeyword}} 
+    </button>
+  </ion-navbar>
+  
+  <ion-toolbar>
+  <ion-buttons> 
+      <button ion-button color="theme" class="button-filter" (click)="sortTapped()"> Sort </button>
+      <button ion-button color="theme" class="button-filter" (click)="filterTapped()"> Filter </button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-refresher (ionRefresh)="doRefresh($event)">
+    <ion-refresher-content></ion-refresher-content>
+  </ion-refresher>
+
+  <!-- <ion-grid>  </ion-grid> -->
+  <ion-row *ngFor="let eachRow of productList; let row = index">
+    <ion-col col-3 *ngFor="let product of eachRow; let column = index" (click)="productTapped(row, column)">
+      <img src={{product.image}}>
+    </ion-col>
+  </ion-row>
+
+  <ion-infinite-scroll *ngIf="!isLastPage" (ionInfinite)="doInfinite($event)">
+    <ion-infinite-scroll-content></ion-infinite-scroll-content>
+  </ion-infinite-scroll> 
+
+</ion-content>
+
+<!-- [hidden]="overlayHidden" -->
+<div class="filter-overlay" [hidden]="!isFilterOn">
+  <ion-content class="filter-content">
+    <ion-list class="list-filter">
+      <!-- Price -->
+      <ion-item text-wrap>
+        <ion-label> Price Range </ion-label>
+        <ion-input class="input-price" type="number" placeholder="Lower Price" [(ngModel)]="lowerPrice"></ion-input>
+        <ion-input class="input-price" type="number" placeholder="Upper Price" [(ngModel)]="upperPrice"></ion-input>
+      </ion-item>
+      <!-- Category -->
+      <ion-item text-wrap>
+        <h2> Categories </h2>
+        <ion-col color="theme" clear ion-button col-4 class="button-option" 
+        *ngFor="let category of categoryList; let index = index" 
+        [ngClass]="{'option-selected':category.selected}" 
+        (click)="categoryTapped(index)">
+          <span class="span-option"> {{ category.name }} </span>
+        </ion-col>
+      </ion-item>
+      <!-- Filter -->
+      <ion-item text-wrap *ngFor="let filter of filterList; let filterIndex = index">
+        <ion-item no-lines>
+          <h2> {{ filter.default_frontend_label }} </h2>
+          <button color="theme" clear ion-button round icon-only item-end (click)="expandTapped(filterIndex)"> 
+            <ion-icon *ngIf="!filterExpandList[filterIndex]" name="add"></ion-icon>
+            <ion-icon *ngIf="filterExpandList[filterIndex]" name="remove"></ion-icon>
+          </button>
+        </ion-item>
+        <div [hidden]="!filterExpandList[filterIndex]">
+          <ion-col color="theme" clear ion-button col-4 class="button-option" 
+          *ngFor="let option of filter.options; let optionIndex = index" 
+          [ngClass]="{'option-selected':option.selected}" 
+          (click)="optionTapped(filterIndex, optionIndex)">
+            <span class="span-option"> {{ option.label }} </span>
+          </ion-col>
+        </div>
+      </ion-item>
+    </ion-list>
+    <!-- <ion-toolbar position="bottom"> </ion-toolbar> -->
+    <ion-buttons class="button-list">
+      <button color="theme" clear ion-button class="button-cancel" (click)="clearTapped()"> Clear </button>
+      <button color="theme" ion-button class="button-apply" (click)="applyTapped()"> Apply </button>
+    </ion-buttons>
+  </ion-content>
+</div>
+
+<div class="filter-overlay" [hidden]="!isSortingOn">
+  <ion-content class="filter-content">
+    <ion-list radio-group [(ngModel)]="sortingType">
+      <ion-item text-wrap>
+        <ion-label> Default </ion-label>
+        <ion-radio color="theme" value="default" (ionSelect)="sortingTypeTapped($event)"> </ion-radio>
+      </ion-item>
+      <ion-item text-wrap>
+        <ion-label> Price from low to high </ion-label>
+        <ion-radio color="theme" value="priceUp" (ionSelect)="sortingTypeTapped($event)"> </ion-radio>
+      </ion-item>
+      <ion-item text-wrap>
+        <ion-label> Price from high to low </ion-label>
+        <ion-radio color="theme" value="priceDown" (ionSelect)="sortingTypeTapped($event)"> </ion-radio>
+      </ion-item>
+    </ion-list>
+  </ion-content>
+</div>

@@ -1,0 +1,48 @@
+page-preference {
+    ion-grid {
+        height: 100%;      
+    }
+
+    ion-row {
+        height: 50%;
+    }
+
+    ion-col {
+       text-align: center;
+    }
+
+    .button-select {
+        width: 100%;
+        height: 100%;
+
+        font-size: 25px;
+        font-weight: bold;
+        color: #eeeeee;
+
+        border-radius: 0px;
+    }
+
+    .image-product {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        z-index: -1;
+        opacity: 0.4;
+        object-fit: cover;
+    }
+
+    .image-logo {
+        //position: absolute;
+        width: 30%;
+        left: 35%;
+        top: 30%;
+    }
+
+    .text-welcome {
+        position: absolute;
+        top: 50%;
+        width: 100%;
+        text-align: center;
+        color: darkgray;
+    }
+}

@@ -1,17 +1,79 @@
 <ion-header>
+  <!-- 
   <ion-navbar>
     <ion-title>Home</ion-title>
   </ion-navbar>
+  -->
 </ion-header>
 
-<ion-content padding>
-  <h2>Welcome to Ionic!</h2>
-  <p>
-    This starter project comes with simple tabs-based layout for apps
-    that are going to primarily use a Tabbed UI.
-  </p>
-  <p>
-    Take a look at the <code>src/pages/</code> directory to add or change tabs,
-    update any existing page or create new pages.
-  </p>
+<!-- no-bounce -->
+<!-- (swipe)="swipeEvent($event, row, column)" -->
+
+
+<!-- (click)="goToProductDetail(row, column)" 
+      (press)="longPress(row, column)"
+    -->
+<ion-content #homeContent (ionScroll)="contentScrollHandler($event)" (ionScrollEnd)="contentScrollEnd($event)">
+  <button ion-button (click)="preferenceTapped()">Preference</button>
+  <button ion-button (click)="searchTapped()">Search</button>
+
+  <ion-slides #productSlides class="product-slides" 
+  *ngFor="let eachRow of products; let row = index"
+  [slidesPerView]="4" 
+  (ionSlideNextEnd)="slideNextDidEnd($event, row)" 
+  (ionSlidePrevEnd)="slidePrevDidEnd($event, row)">
+    <ion-slide class="product-slide" *ngFor="let product of eachRow; let column = index">
+      <img class="product-image" 
+      [@flipHorizontalState]="product.horizontalState" 
+      (@flipHorizontalState.start)="animationStarted($event, row, column)"
+      (@flipHorizontalState.done)="animationDone($event, row, column)"
+      (click)="goToProductDetail(row, column)"
+      (press)="longPress(row, column)"
+      src='assets/imgs/product04.jpg'>
+    </ion-slide>
+  </ion-slides>
+
+  <!--
+  <ion-grid>
+      <ion-row *ngFor="let eachRow of savedProducts; let row = index">
+        <ion-col *ngFor="let product of eachRow; let column = index" class="image-container"> 
+          <img class="product-image" 
+            (click)="goToProductDetail(row, column)" 
+            (press)="longPress(row, column)"
+            (swipe)="swipeEvent($event, row, column)" 
+            src="{{product.name}}">    
+          <ion-icon name="heart" *ngIf="product.isPinned"></ion-icon>
+        </ion-col>
+      </ion-row>
+  </ion-grid>
+  -->
+
 </ion-content>
+
+<!-- 
+<ion-content>
+  <ion-grid>
+    <ion-row *ngFor="let eachRow of products; let row = index">
+      <ion-col *ngFor="let product of eachRow; let column = index" class="image-container"> 
+        <img class="product-image" 
+          [@flipVerticalState]="product.verticalState" 
+          (@flipVerticalState.start)="animationStarted($event, row, column)"
+          (@flipVerticalState.done)="animationDone($event, row, column)"
+          [@flipHorizontalState]="product.horizontalState" 
+          (@flipHorizontalState.start)="animationStarted($event, row, column)"
+          (@flipHorizontalState.done)="animationDone($event, row, column)"
+          (click)="goToProductDetail(row, column)" 
+          (press)="longPress(row, column)"
+          (swipe)="swipeEvent($event, row, column)" 
+          src="{{product.name}}">    
+        <ion-icon name="heart" *ngIf="product.isPinned"></ion-icon>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-content>
+-->
+
+<!-- <button class="random-button" (click)="randomizeProducts($event)">Randomize</button> -->
+<!-- ion-button -->
+
+

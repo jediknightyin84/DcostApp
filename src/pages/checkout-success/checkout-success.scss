@@ -1,0 +1,36 @@
+page-checkout-success {
+
+
+    /*
+    ion-icon {
+        display: block;
+        text-align: center;
+        font-size: 16em;
+        font-weight: bold;
+        color: green;
+        margin-top: 40%;
+    }
+    */
+
+    ion-content {
+        text-align: center;
+    }
+
+    .title-custom {
+        //text-align: center;
+        //margin: 20%;
+        margin-top: 20%;
+        margin-bottom: 20%;
+        color: color($colors, theme);
+    }
+
+    .image-logo {
+        margin-top: 10%;
+        width: 20%;
+    }
+
+    .image-checkout {
+        width: 40%;
+    }
+
+}

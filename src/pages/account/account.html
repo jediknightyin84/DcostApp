@@ -1,0 +1,67 @@
+<!--
+  Generated template for the AccountPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+  <ion-navbar>
+    <ion-title>Account</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content>
+  <ion-list>
+    <ion-item no-lines class="item-avatar">
+      <img class="image-avatar" src="assets/imgs/LogoSample.png"/>
+      <h2> {{ email }} </h2>
+      <h2> {{ firstname }} </h2>
+    </ion-item>
+
+    <!--
+    <ion-item (click)="wishlistTapped()">
+      <ion-icon name="icon-app-wishlist" item-start></ion-icon>
+        Wishlist
+      <ion-icon name="arrow-forward" item-end></ion-icon>
+    </ion-item>
+    -->
+
+    <ion-item no-lines class="item-custom" (click)="orderTapped()">
+      <ion-icon class="icon-option" name="icon-app-order" item-start></ion-icon>
+        Orders
+      <ion-icon name="arrow-forward" color="theme" item-end></ion-icon>
+    </ion-item>
+
+    <ion-item no-lines class="item-custom" (click)="addressTapped()">
+      <ion-icon class="icon-option" name="icon-app-address" item-start></ion-icon>
+        Address Book
+      <ion-icon name="arrow-forward" color="theme" item-end></ion-icon>
+    </ion-item>
+
+    <!--
+    <ion-item (click)="paymentTapped()">
+      <ion-icon name="icon-app-payment" item-start></ion-icon>
+        Payment
+      <ion-icon name="arrow-forward" item-end></ion-icon>
+    </ion-item>
+    -->
+
+    <ion-item no-lines class="item-custom" (click)="profileTapped()">
+      <ion-icon class="icon-option" name="icon-app-account" item-start></ion-icon>
+        Profile
+      <ion-icon name="arrow-forward" color="theme" item-end></ion-icon>
+    </ion-item>
+
+    <ion-item no-lines *ngIf="isLogin">
+      <button class="button-signout" ion-button large color="danger" block outline (click)="signOutTapped()">Sign Out</button>
+    </ion-item>
+  </ion-list>
+</ion-content>
+
+<!--
+<ion-footer *ngIf="isLogin" no-shadow>
+  <ion-toolbar position="bottom">
+    
+  </ion-toolbar>
+</ion-footer>
+-->

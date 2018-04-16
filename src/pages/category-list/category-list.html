@@ -1,0 +1,37 @@
+<!--
+  Generated template for the CategoryListPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+  <ion-navbar>
+    <!--
+    <ion-icon class="icon-logo" name="customicon"> </ion-icon>
+    <button class="button-search" clear ion-button icon-only (click)="searchTapped()">
+      <ion-icon name="search"> </ion-icon>
+    </button>
+    -->
+    <button ion-button class="button-search" color="theme" clear (click)="searchTapped()"> 
+      <ion-icon class="icon-search" color="theme" name="icon-app-search"></ion-icon>
+      Search Products
+    </button>
+
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+  <ion-slides #productSlides class="product-slides" *ngFor="let category of categoryList; let cIndex = index" [slidesPerView]="4">
+    <ion-slide class="product-slide" *ngFor="let product of productList[cIndex]; let pIndex = index">
+      <div class="product-banner" style="width:60px;height:60px;" *ngIf="pIndex == 0" (click)="productListTapped(category.id)"> 
+        <h6> {{category.name | uppercase}} </h6>
+      </div>
+      <div *ngIf="pIndex > 0 && pIndex < productList[cIndex].length - 1"> 
+        <img class="product-image" src="{{product.image}}" (click)="productDetailTapped(product.sku)"> 
+      </div>
+      <div class="product-banner" style="width:60px;height:60px;" *ngIf="pIndex == productList[cIndex].length - 1" (click)="productListTapped(category.id)"> 
+        <h6> More </h6>
+      </div>
+    </ion-slide>
+  </ion-slides>
+</ion-content>

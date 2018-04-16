@@ -1,0 +1,204 @@
+page-product-detail {
+
+    /*
+    .item-title {
+        top: 0px;
+        height: 70px;
+        position: absolute;
+        text-align: center;
+        padding: 0px;
+        padding-right: 16px;
+    }
+
+    .item-slides {
+        //top: 70px;
+        //bottom: 80px;
+        //position: absolute;
+        //text-align: center;
+        //padding: 0px;
+        //padding-right: 16px;
+    }
+
+    .item-button {
+        bottom: 0px;
+        height: 80px;
+        position: absolute;
+        text-align: center;
+        padding: 0px;
+        padding-right: 16px;
+    }
+
+    .button-round {
+        background: lightgray;
+    }
+    */
+    
+    .button-info {
+        position: absolute;
+        left: 12px;
+        bottom: 12px;
+        width: 35px;
+        height: 35px;
+        //background: darkgray;
+        //background-color: color($colors, theme);
+        background-color: transparent;
+        z-index: 10;
+    }
+
+    .button-buy {
+        position: absolute;
+        right: 12px;
+        bottom: 12px;
+        width: 35px;
+        height: 35px;
+        //background: darkgray;
+        //background-color: color($colors, theme);
+        background-color: transparent;
+        z-index: 10;
+    }
+
+    .button-close {
+        position: absolute;
+        left: 10px;
+        top: 10px;
+        width: 40px;
+        height: 40px;
+        //background: transparent;
+        //color: darkgray;
+        z-index: 10;
+    }
+
+    .icon-info {
+        font-size: 24px;
+    }
+
+    .icon-buy {
+        font-size: 20px;
+    }
+
+    .icon-cancel {
+        font-size: 24px;
+        color: white;
+    }
+
+    .icon-cart {
+        font-size: 15px;
+        color: white;
+    }
+
+    .product-title {
+        position: absolute;
+        text-align: center;
+        top: 20px;
+        width: 60%;
+        left: 20%;
+        z-index: 10;
+    }
+
+    .product-name {
+        font-size: 20px;
+        color: darkgray;
+        margin-bottom: 0px;
+    }
+
+    .product-price {
+        font-size: 20px;
+        font-weight: bold;
+        color: darkgray;
+        margin: 0px;
+    }
+
+    .button-option {
+        margin: 5px;
+    }
+
+    .my-overlay {
+        position: fixed;
+        width: 100%;
+        height: 100%;
+        background: rgba(0,0,0,0.7);
+        z-index: 20;
+        bottom: 0;
+        left: 0;
+    }
+
+    .product-chart {
+        top: 40%;
+        height: 60%;
+        background-color: #e8e4e0;
+    }
+
+    .button-confirm {
+        margin-bottom: 40px;
+        //margin-left: 20px;
+        //margin-right: 20px;
+        //padding-left: 20px;
+        //padding-right: 20px;
+
+        width: 90%;
+        left: 5%;
+
+        border-radius: 0px;
+    }
+
+    .button-cancel {
+        //position: absolute;
+        left: 12px;
+        bottom: 12px;
+        width: 35px;
+        height: 35px;
+        background-color: color($colors, theme);
+        z-index: 10;
+    }
+
+    .button-cart {
+        position: absolute;
+        right: 12px;
+        bottom: 12px;
+        width: 35px;
+        height: 35px;
+        background-color: color($colors, theme);
+        z-index: 10;
+    }
+
+    .button-round {
+        width: 30px;
+        height: 30px;
+        padding: 0px;
+    }
+
+    .button-option {
+        border: darkgray solid 1px;
+        width: 30%;
+        margin-left: 1.6%;
+        margin-right: 1.6%;
+        height: 30px !important;
+        margin-top: 5px;
+        margin-bottom: 5px;
+        border-radius: 0px;
+        //color: darkgray;
+        //white-space: pre-line;
+        //background-color: transparent;
+    }
+
+    .option-selected {
+        color: white;
+        background-color: color($colors, theme);
+    }
+
+    .span-option {
+        overflow: hidden;
+        white-space: pre;
+    }
+
+    .item-cart-product {
+        height: 80px;
+    }
+
+    .image-cart-product {
+        width: 60px !important;
+        height: 60px !important;
+        object-fit: contain;
+    }
+
+}

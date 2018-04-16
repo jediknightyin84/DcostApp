@@ -1,0 +1,65 @@
+<!--
+  Generated template for the NewAddressPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+  <ion-navbar>
+    <ion-title *ngIf="isNewAddress">New Address</ion-title>
+    <ion-title *ngIf="!isNewAddress">Edit Address</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+  <ion-list>
+    <ion-item class="item-input" no-lines>
+      <ion-label stacked>First Name</ion-label>
+      <ion-input type="text" [(ngModel)]="firstname"></ion-input>
+    </ion-item>
+    <ion-item class="item-input" no-lines>
+      <ion-label stacked>Last Name</ion-label>
+      <ion-input type="text" [(ngModel)]="lastname"></ion-input>
+    </ion-item>
+    <ion-item class="item-input" no-lines>
+      <ion-label stacked>Phone</ion-label>
+      <ion-input type="text" [(ngModel)]="phone"></ion-input>
+    </ion-item> 
+    <ion-item class="item-input" no-lines>
+      <ion-label stacked>Street</ion-label>
+      <ion-input type="text" [(ngModel)]="street1"></ion-input>
+    </ion-item>    
+    <ion-item class="item-input" no-lines>
+      <ion-label stacked>Apt, Building, etc.</ion-label>
+      <ion-input type="text" [(ngModel)]="street2"></ion-input>
+    </ion-item>
+    <ion-item class="item-input" no-lines>
+      <ion-label stacked>City</ion-label>
+      <ion-input type="text" [(ngModel)]="city"></ion-input>
+    </ion-item>
+    <ion-item class="item-input" no-lines>
+      <ion-label stacked>Province</ion-label>
+      <ion-input type="text" [(ngModel)]="province"></ion-input>
+    </ion-item>
+    <ion-item class="item-input" no-lines>
+      <ion-label stacked>Postal Code</ion-label>
+      <ion-input type="text" [(ngModel)]="postalCode"></ion-input>
+    </ion-item>
+
+    <ion-item no-lines *ngIf="!showDefaultShipping">
+      <ion-label>Default Shipping Address</ion-label>
+      <ion-checkbox color="theme" [(ngModel)]="isDefaultShipping"></ion-checkbox>
+    </ion-item>
+    <ion-item no-lines *ngIf="!showDefaultBilling">
+      <ion-label>Default Billing Address</ion-label>
+      <ion-checkbox color="theme" [(ngModel)]="isDefaultBilling"></ion-checkbox> 
+    </ion-item>
+  </ion-list>
+</ion-content>
+
+<ion-footer no-shadow>
+  <ion-toolbar position="bottom">
+    <button ion-button color="theme" block (click)="saveAddressTapped()">Save</button>
+  </ion-toolbar>
+</ion-footer>
+

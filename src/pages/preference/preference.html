@@ -1,0 +1,32 @@
+<!--
+  Generated template for the PreferencePage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+</ion-header>
+
+<ion-content>
+  <!-- [@fade]="fadeWelcome" -->
+  <!-- 
+  <div>
+    <img [@fade]="fade.welcome" class="image-logo" src='assets/imgs/LogoSample.png'>
+    <h1 [@fade]="fade.welcome" class="text-welcome"> Welcome to Grace & Jack! </h1>
+  </div>
+  -->
+
+  <!-- !category.isSelected [@fade]="fade.preference"-->
+  <!-- [@fade]="fade.preference" -->
+  <ion-grid>
+    <ion-row *ngFor="let eachRow of categoryList; let row = index">
+      <ion-col col-6 *ngFor="let category of eachRow; let column = index">
+        <!-- [outline]="true" -->
+        <button ion-button color="dark" class="button-select" (click)="categoryTapped(row, column)"> 
+        <img class="image-product" src={{category.image}}>
+        <p> {{ category.name | uppercase }} </p>
+        </button>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-content>

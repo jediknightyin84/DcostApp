@@ -1,0 +1,68 @@
+page-category-list {    
+    .product-slides {
+        //width: 25%;
+        height: 20%;
+    }
+
+    .product-slide {
+        perspective: 200px;
+        -webkit-perspective: 200px;
+
+        padding: 5px;
+    }
+
+    .product-image {
+        object-fit: cover;
+    }
+
+    .product-banner {
+        //height: 80%;
+        //width: 80%;
+        display: table;
+        border: 1px solid darkgray;   
+        border-radius: 30px;     
+    }
+
+    h6 {
+        font-size: 10px;
+        //padding-left: 3px;
+        //padding-right: 3px;
+        display: table-cell;
+        vertical-align: middle;
+        color: darkgray;
+    }
+
+    .ion-ios-customicon-outline,
+    .ion-ios-customicon,.ion-md-customicon,.ion-md-customicon-outline {
+        content: url('../assets/imgs/TabSample02.png');
+    }
+
+    .icon-logo {
+        position: absolute;
+        height: 30px;
+        //text-align: center;
+        top: 15px;
+        left: 45%;
+    }
+
+    ion-navbar {
+        text-align: center;
+    }
+
+    .button-search {
+        //background: transparent;
+        border: darkgray solid 1px;
+        border-radius: 0px;
+        width: 90%;
+        //left: 5%;
+        background-color:white;
+        height: 35px;
+        //margin-left: auto;
+        //margin-right: auto;
+    }
+
+    .icon-search {
+        position: absolute;
+        left: 10px;
+    }
+}

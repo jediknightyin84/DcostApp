@@ -1,0 +1,24 @@
+
+/*
+.ion-ios-customicon-outline,
+.ion-ios-customicon,.ion-md-customicon,.ion-md-customicon-outline {
+  content: url('../assets/imgs/TabSample02.png');
+}
+*/
+
+.tabs-ios .tab-button[aria-selected=true] .tab-button-icon {
+  color: black !important;
+}
+
+.tabs-md .tab-button[aria-selected=true] .tab-button-icon {
+  color: black !important;
+}
+
+.tabs .tab-button[aria-selected=true] .tab-button-icon {
+  color: black !important;
+}
+
+.tabs-ios .tab-button .tab-button-icon {
+  font-size: 20px;
+  line-height: 35px;
+}

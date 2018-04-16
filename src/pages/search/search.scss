@@ -1,0 +1,46 @@
+page-search {
+    .tag-history {
+        border: darkgray solid 1px;
+        color: color($colors, theme);
+        border-radius: 0px;
+        padding: 10px;
+        margin:5px;
+        display: inline-block
+    }
+
+    .tag-padding {
+        
+    }
+
+    .item-custom {
+        border-bottom: lightgray solid 1px !important;
+    }
+
+    .item-history {
+        text-align: center;
+    }
+
+    ion-searchbar {
+        float: right;
+        width: 85%;
+        top: 5px;
+    }
+
+    .button-remove {
+        margin-top: 30px;
+    }
+
+    .text-title {
+        display: inline;
+        font-size: 18px;
+        color: color($colors, theme);
+    }
+
+    .text-count {
+        display: inline;
+        float: right;
+        font-size: 18px;
+        margin-right: 20px;
+
+    }
+}

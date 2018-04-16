@@ -38,7 +38,9 @@ $colors: (
   secondary:  #32db64,
   danger:     #f53d3d,
   light:      #f4f4f4,
-  dark:       #222
+  dark:       #222,
+  option:     #666666,
+  theme:      #999999
 );
 
 
@@ -78,8 +80,8 @@ $colors: (
 // The premium icon font for Ionic. For more info, please see:
 // http://ionicframework.com/docs/ionicons/
 
-@import "ionic.ionicons";
-
+//@import "ionic.ionicons";
+@import "ionicons";
 
 // Fonts
 // --------------------------------------------------

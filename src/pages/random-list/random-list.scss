@@ -1,0 +1,90 @@
+page-random-list {
+    ion-grid { 
+        height: 100%;  
+        position: absolute;
+        top: 0;
+        left: 0;
+    }
+
+    ion-row {
+        height: 20%;
+    }
+
+    .col-product {
+        perspective: 200px;
+        -webkit-perspective: 200px;
+        padding: 5px;
+    }
+
+    .image-product {
+        /* transform-style: preserve-3d; */
+        /* -webkit-transform-style: preserve-3d; */
+        /* -moz-transform-style: preserve-3d; */
+        /* -o-transform-style: preserve-3d; */
+        /* -ms-transform-style: preserve-3d; */
+        object-fit: cover;
+        //height: 100%;
+    }
+
+    .button-close {
+        position: absolute;
+        left: 12px;
+        bottom: 12px;
+        width: 35px;
+        height: 35px;
+        background-color: color($colors, theme);
+        z-index: 10;
+    }
+
+    .button-random {
+        position: absolute;
+        right: 12px;
+        bottom: 12px;
+        width: 35px;
+        height: 35px;
+        background-color: color($colors, theme);
+        z-index: 10;
+    }
+
+    .icon-close {
+        //font-size: 20px;
+        color: white;
+    }
+
+    .icon-random {
+        font-size: 15px;
+        color: white;
+    }
+
+    .icon-custom {
+        position: absolute;
+        top: 10px;
+        right: 10px;
+        color: color($colors, theme);
+    }
+
+    /*
+    .button-preference {
+        width: 15%;
+    }
+
+    .button-random {
+        width: 80%;
+    }
+
+    ion-fab {
+        z-index: 1000;
+    }
+    */
+}
+
+.action-sheets-groups-page {
+    .pinButton {
+        color: color($colors, theme) !important;
+        font-weight: bold;
+    }
+
+    .cancelButton {
+        color: color($colors, theme) !important;
+    }
+}

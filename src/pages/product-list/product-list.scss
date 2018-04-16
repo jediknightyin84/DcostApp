@@ -1,0 +1,107 @@
+page-product-list {
+    ion-row {
+        height: 20%;
+    }
+
+    .button-filter {
+        width: 48%;
+    }
+
+    .button-search {
+        //background: transparent;
+        border: darkgray solid 1px;
+        border-radius: 0px;
+        width: 90%;
+        left: 5%;
+        background-color:white;
+        height: 35px;
+    }
+
+    .icon-search {
+        position: absolute;
+        left: 10px;
+    }
+
+    .input-price {
+
+        border: darkgray solid 1px;
+        margin-left: 10px;
+        margin-right: 10px;
+        //margin-top: 5px;
+        //margin-bottom: 5px;
+        //border-radius: 5px;
+        text-align: center;
+        font-size: 13px;
+    }
+
+    ion-input {
+        input {
+            text-align: center;
+            margin-top: 5px !important; 
+            margin-bottom: 5px !important;
+        }
+    }
+
+    .button-option {
+        //background-color: transparent;
+        border: darkgray solid 1px;
+        //border-radius: 10px;
+        //color: darkgray;
+        width: 30%;
+        margin-left: 1.6%;
+        margin-right: 1.6%;
+        height: 30px !important;
+        margin-top: 5px;
+        margin-bottom: 5px;
+        border-radius: 0px;
+        //white-space: pre-line;
+    }
+
+    .option-selected {
+        //order: brown solid 1px;
+        color: white;
+        background-color: color($colors, theme);
+    }
+
+    .span-option {
+        overflow: hidden;
+        //white-space: pre;
+        //vertical-align: top;
+    }
+
+    .button-list {
+        text-align: center;
+    }
+
+    .button-cancel {
+        width: 40%;
+        border: color($colors, theme) solid 1px;
+        border-radius: 0px;
+        margin-right: 10px;
+        //margin: 0px;
+    }
+
+    .button-apply {
+        width: 40%;
+        border: color($colors, theme) solid 1px;
+        border-radius: 0px;
+        margin-left: 10px;
+        //margin: 0px;
+        //float: right;
+    }
+
+    .filter-overlay {
+        position: fixed;
+        width: 100%;
+        //height: 100%;
+        //background: rgba(0,0,0,0.7);
+        top: 100px;
+        z-index: 20;
+        bottom: 0;
+        left: 0;
+    }
+
+    .filter-content {
+        background-color: #e8e4e0;
+    }
+}

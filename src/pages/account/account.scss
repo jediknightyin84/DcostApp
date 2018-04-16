@@ -1,0 +1,38 @@
+page-account {
+    ion-navbar {
+        text-align: center;
+    }
+
+    .item-avatar {
+        //background:color($colors, theme);
+        //background:white;
+        height: 200px;
+        text-align: center;
+        //border-top: 0px !important;
+
+        border-bottom: lightgray solid 1px !important;
+    }
+
+    .item-custom {
+        border-bottom: lightgray solid 1px !important;
+    }
+
+    .image-avatar {
+        width: 80px;
+        height: 80px;
+        object-fit: contain;
+    }
+
+    .icon-option {
+        font-size: 20px;
+        line-height: 30px;
+    }
+
+    h2 {
+        color: color($colors, theme);
+    }
+
+    .button-signout {
+        border-radius: 0px;
+    }
+}

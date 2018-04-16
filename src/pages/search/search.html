@@ -1,0 +1,46 @@
+<!--
+  Generated template for the SearchPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+  <!-- 
+  <ion-navbar>
+    <ion-title>search</ion-title>
+  </ion-navbar>
+  -->
+  <ion-navbar>
+
+    <button color="theme" clear round icon-only ion-button (click)="closeTapped()">
+      <ion-icon name="close"></ion-icon>
+    </button>
+
+    <ion-searchbar
+      [(ngModel)]="searchKeyword"
+      [showCancelButton]="true"
+      (keyup.enter)= "searchTapped()"
+      (ionInput)="onInput($event)"
+      (ionCancel)="onCancel($event)"
+      color="theme">
+    </ion-searchbar>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+  <div [hidden]="!isHistory">
+    <ion-item class="item-history" no-lines> History </ion-item>
+    <div class="tag-padding">
+      <a class="tag-history" *ngFor="let history of historyList; let index = index" (click)="historyTapped(index)"> {{ history }} </a>
+    </div>
+    <button class="button-remove" color="theme" ion-button clear block (click)="clearTapped()"> Clear history </button>
+  </div>
+
+  <ion-list [hidden]="isHistory">
+    <!-- [hidden]="category.searchedProductCount == 0" -->
+    <ion-item no-lines class="item-custom" *ngFor="let category of categoryList; let index = index" (click)="categoryTapped(index)">
+      <h4 class="text-title"> {{ category.name }} </h4> 
+      <h4 class="text-count"> {{ category.searchedProductCount }} </h4>
+    </ion-item>
+  </ion-list>
+</ion-content>
